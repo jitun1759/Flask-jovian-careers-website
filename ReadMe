@@ -1,0 +1,74 @@
+Youtube video references links: https://youtu.be/yBDHkveJUf4
+
+Notes & references links:
+            Part-1: https://jovian.com/aakashns/web-development-with-python
+            Part-2: https://jovian.com/aakashns/database-driven-web-applications
+
+Step 1 - Project Setup & Flask Basics
+       -Create and run a Flask web server
+
+Step 2 - Web Pages with HTML & CSS
+        -Render templates and use static assets
+        -Create the layout of the page using HTML tags
+        -Style the page using CSS classes, properties, and values
+        -Use the Bootstrap framework for faster development
+
+Step 3 - Dynamic Data & Cloud Deployment
+        -Render dynamic data using Jinja template tags
+        -Add an API route to return JSON
+
+Step 4 - Functional & Aesthetic Improvements
+        -Add a Navbar and Footer from Bootstrap
+        -Add mailto: links for the buttons
+        -Make the website mobile-friendly (responsive)
+        -Refactor templates into reusable components
+        -You can go ahead and try the above steps with the help of bootstrap documentation.
+
+Step 1 - Set up project and cloud database
+        -Set up a cloud MySQL database on PlanetScale
+        -Create jobs table and add data using MySQL Workbench
+        -Connect to database from Replit using SQLAlchemy
+
+SQL Statement to Create jobs Table
+CREATE TABLE jobs (
+  id INT NOT NULL AUTO_INCREMENT,
+  title VARCHAR(120) NOT NULL,
+  location VARCHAR(120) NOT NULL,
+  salary INT,
+  currency VARCHAR(10),
+  responsibilities VARCHAR(2000),
+  requirements VARCHAR(2000),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
+Step 2 - Create database-driven dynamic pages
+        -Display list of jobs from cloud DB using SQL alchemy
+        -Create dynamic pages to display each job role
+        -Share layout, styles, and navigation using bootstrap
+
+Step 3 - Store submitted applications in database
+        -Add a form to collect applications on job details page
+        -Create a flask route to handle application form submissions
+        -Create a table to store applications in cloud database
+        -Store submitted applications and show acknowledgement
+
+SQL Statement to Create applications Table
+CREATE TABLE applications (
+  id INT NOT NULL AUTO_INCREMENT,
+  job_id INT NOT NULL,
+  full_name VARCHAR(250) NOT NULL,
+  email VARCHAR(250) NOT NULL,
+  linkedin_url VARCHAR(500),
+  education VARCHAR(2000),
+  work_experience VARCHAR(2000),
+  resume_url VARCHAR(500),
+  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  PRIMARY KEY (id)
+);
+
+Step 4 - Functional & Aesthetic Improvements
+        -Validate application form responses before submission
+        -Provide an API to access individual job listings & applications by ID
